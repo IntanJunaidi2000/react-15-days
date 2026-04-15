@@ -1,0 +1,248 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --coral: #FF8F8F;
+  --yellow: #FFF1CB;
+  --blue: #C2E2FA;
+  --purple: #B7A3E3;
+  --bg-page: #F7F4FF;
+  --bg-card: #ffffff;
+  --bg-border: #E8E2F5;
+  --text: #1C1B2E;
+  --text-muted: #888;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page: #1C1B2E;
+    --bg-card: #26253A;
+    --bg-border: #3a3850;
+    --text: #f0f0f0;
+    --text-muted: #aaa;
+  }
+}
+
+body { margin: 0; }
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-page);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 2px solid var(--purple);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 440px;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mood-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.mood-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid var(--bg-border);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  color: var(--text);
+}
+
+.mood-btn:hover {
+  border-color: var(--purple);
+  background: var(--bg-page);
+}
+
+.mood-btn.active {
+  border-color: var(--purple);
+  background: var(--blue);
+}
+
+.emoji { font-size: 28px; }
+
+.mood-label { font-size: 11px; color: var(--text-muted); }
+
+.log-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--purple);
+  background: var(--purple);
+  color: #1C1B2E;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.log-btn:hover { opacity: 0.85; }
+
+.history { margin-top: 1.5rem; }
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.clear-btn {
+  font-size: 11px;
+  color: var(--coral);
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.history-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bg-border);
+  font-size: 13px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--coral);
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: auto;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: var(--coral);
+  color: white;
+}
+
+.history-emoji { font-size: 20px; }
+.history-label { color: var(--text); flex: 1; }
+.history-date { color: var(--text-muted); font-size: 12px; }
+
+@keyframes dance {
+  0%   { transform: scale(1) rotate(0deg); }
+  25%  { transform: scale(1.4) rotate(-12deg); }
+  50%  { transform: scale(1.4) rotate(12deg); }
+  75%  { transform: scale(1.3) rotate(-6deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.dancing {
+  animation: dance 0.5s ease;
+  display: inline-block;
+}
+
+.warning-box {
+  background: var(--bg-page);
+  border: 1px solid var(--coral);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  animation: slideDown 0.25s ease;
+}
+
+.warning-text {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.warning-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.warning-cancel {
+  flex: 1;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--bg-border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.warning-cancel:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.warning-confirm {
+  flex: 1;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  background: var(--coral);
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.warning-confirm:hover {
+  opacity: 0.85;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.warning-box.closing {
+  animation: slideUp 0.25s ease forwards;
+}
