@@ -11,7 +11,7 @@ One React project a day for 15 days — built to sharpen my frontend skills and 
 | Day | Project | Concepts Covered | Status |
 |-----|---------|-----------------|--------|
 | 01 | [Dev Profile Card](./day-01-profile-card) | Components, props, flexbox, CSS variables, dark/light mode | ✅ Done |
-| 02 | [Dev Profile Card](./day-02-mood-tracker)  | `useState`, localStorage, CSS animations | ✅ Done |
+| 02 | [Mood Tracker](./day-02-mood-tracker)  | `useState`, localStorage, CSS animations | ✅ Done |
 | 03 | Pomodoro Timer | `useEffect`, intervals | ⬜ |
 | 04 | Expense Tracker | `useState`, array methods | ⬜ |
 | 05 | Quiz App | Conditional rendering | ⬜ |
